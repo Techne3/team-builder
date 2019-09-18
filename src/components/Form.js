@@ -16,11 +16,9 @@ const Form = (props) => {
         })
         console.log(input)
 
-
-
         // setInput({input: e.target.value })
         // console.log("input",input)
-        // ...input,[e.target.name]:e.target.value
+
     }
 
     const submitForm=(e) => {
@@ -33,8 +31,8 @@ const Form = (props) => {
        
         <form onSubmit={submitForm}>
 
-         <label htmlFor="title">Name:
-            <input 
+         <label htmlFor="title" className="name">Name:
+            <input className="inputName"
             id="name"
             type="text" 
             name="name" 
@@ -43,8 +41,17 @@ const Form = (props) => {
             />
          </label>
         
-         <label htmlFor="email">Email:
-            <input 
+         <label htmlFor="role">Role:
+            <input className="inputRole"
+             id="role"
+             type="text"
+             name="role"
+             value={input.role} 
+             onChange={handleChanges}
+             />
+         </label>
+         <label htmlFor="email" className="email"> Email: 
+            <input  className="inputEmail"
             id="email"
             type="text"
             name="email"
@@ -53,17 +60,7 @@ const Form = (props) => {
               />
          </label>
         
-         <label htmlFor="role">Role:
-            <input 
-             id="role"
-             type="text"
-             name="role"
-             value={input.role} 
-             onChange={handleChanges}
-             />
-         </label>
-        
-         <button type="submit">Add Member</button>
+         <button type="submit" className="addButton">Add Member</button>
         </form>
 
     )
